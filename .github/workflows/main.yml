@@ -1,0 +1,17 @@
+name: HTML Workflow Trigger
+
+on:
+  push:
+    paths:
+      - 'index.html'
+
+jobs:
+  run-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Workflow triggered
+        run: echo "index.html was pushed and workflow triggered!"
